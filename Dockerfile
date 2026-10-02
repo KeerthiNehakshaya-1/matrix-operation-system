@@ -11,6 +11,6 @@ COPY frontend /app/frontend
 
 WORKDIR /app/backend
 
-RUN g++ -std=c++17 server.cpp -o server
+RUN g++ -std=c++17 -pthread server.cpp -o server
 
 CMD ["./server"]
