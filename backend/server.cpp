@@ -6,7 +6,7 @@
 
 #include "httplib.h"
 #include "json.hpp"
-#include "Matrix.h"
+#include "matrix.h"
 
 using namespace std;
 using json = nlohmann::json;
