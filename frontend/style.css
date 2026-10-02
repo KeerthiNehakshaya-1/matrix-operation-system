@@ -1,0 +1,702 @@
+/* ==================================================
+   GENERAL PAGE
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f4f6f8;
+
+    margin: 0;
+
+    padding: 30px;
+}
+
+
+/* ==================================================
+   MAIN CONTAINER
+   ================================================== */
+
+.container {
+    max-width: 850px;
+
+    margin: auto;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+
+/* ==================================================
+   HEADINGS
+   ================================================== */
+
+h1 {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+h2 {
+    margin-top: 25px;
+}
+
+
+/* ==================================================
+   OPERATION
+   ================================================== */
+
+.operation-section {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.operation-section label {
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+select {
+    padding: 8px;
+
+    margin-left: 8px;
+
+    font-size: 15px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+}
+
+
+/* ==================================================
+   MATRIX DIMENSIONS
+   ================================================== */
+
+.dimensions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+.dimensions label {
+    font-weight: bold;
+}
+
+
+.dimensions select {
+    margin-left: 0;
+}
+
+
+/* ==================================================
+   MATRIX SECTION
+   ================================================== */
+
+.matrix-section {
+    margin-bottom: 30px;
+}
+
+
+/* ==================================================
+   MATRIX INPUT GRID
+   ================================================== */
+
+.matrix-grid {
+    display: grid;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    padding: 15px;
+
+    background-color: #f4f4f4;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   MATRIX INPUT
+   ================================================== */
+
+.matrix-input {
+    width: 65px;
+
+    height: 42px;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    font-family: monospace;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+    background-color: white;
+}
+
+
+.matrix-input:focus {
+    outline: 2px solid #555;
+}
+
+
+/* ==================================================
+   CLEAR MATRIX BUTTONS
+   ================================================== */
+
+#clearAButton,
+#clearBButton {
+    display: block;
+
+    padding: 9px 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    background-color: #777;
+
+    color: white;
+}
+
+
+#clearAButton:hover,
+#clearBButton:hover {
+    background-color: #555;
+}
+
+
+/* ==================================================
+   CALCULATE BUTTON
+   ================================================== */
+
+#calculateButton {
+    display: block;
+
+    margin: 35px auto 10px auto;
+
+    padding: 12px 35px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    background-color: #222;
+
+    color: white;
+}
+
+
+#calculateButton:hover {
+    background-color: #444;
+}
+
+
+/* ==================================================
+   RESULT PAGE
+   ================================================== */
+
+.result-page {
+    max-width: 1100px;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   RESULT PAGE TITLE
+   ================================================== */
+
+.result-page h1 {
+    margin-top: 0;
+
+    margin-bottom: 10px;
+}
+
+
+#operationTitle {
+    margin-top: 15px;
+
+    margin-bottom: 55px;
+
+    font-size: 28px;
+
+    text-transform: uppercase;
+}
+
+
+/* ==================================================
+   RESULT OPERATION AREA
+   ================================================== */
+
+#operationArea {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    margin-bottom: 60px;
+
+    padding: 15px 20px;
+
+    gap: 25px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+}
+
+
+/* ==================================================
+   RESULT MATRIX BLOCK
+   ================================================== */
+
+.matrix-block {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 auto;
+}
+
+
+.matrix-block h2 {
+    margin: 0 0 20px 0;
+
+    font-size: 25px;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   RESULT OPERATORS
+   ================================================== */
+
+.operator {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 35px;
+
+    min-width: 35px;
+
+    flex: 0 0 35px;
+
+    font-size: 38px;
+
+    font-family: "Times New Roman", serif;
+}
+
+
+/* ==================================================
+   MATHEMATICAL MATRIX
+   ================================================== */
+
+.math-matrix {
+    display: flex;
+
+    align-items: stretch;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    height: auto;
+
+    flex-shrink: 0;
+}
+
+
+/* ==================================================
+   MATRIX VALUES
+   ================================================== */
+
+.matrix-values {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 4px 8px;
+}
+
+
+/* ==================================================
+   MATRIX ROW
+   ================================================== */
+
+.matrix-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 38px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==================================================
+   MATRIX NUMBERS
+   ================================================== */
+
+.matrix-row span {
+    min-width: 45px;
+
+    padding: 0 4px;
+
+    text-align: center;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 22px;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   MATRIX BRACKETS
+   ================================================== */
+
+.matrix-bracket {
+    position: relative;
+
+    width: 18px;
+
+    align-self: stretch;
+
+    flex-shrink: 0;
+}
+
+
+/* Left bracket */
+
+.left-bracket {
+    border-left: 4px solid #000;
+}
+
+
+.left-bracket::before,
+.left-bracket::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    width: 14px;
+
+    height: 4px;
+
+    background-color: #000;
+}
+
+
+.left-bracket::before {
+    top: 0;
+}
+
+
+.left-bracket::after {
+    bottom: 0;
+}
+
+
+/* Right bracket */
+
+.right-bracket {
+    border-right: 4px solid #000;
+}
+
+
+.right-bracket::before,
+.right-bracket::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    width: 14px;
+
+    height: 4px;
+
+    background-color: #000;
+}
+
+
+.right-bracket::before {
+    top: 0;
+}
+
+
+.right-bracket::after {
+    bottom: 0;
+}
+
+
+/* ==================================================
+   SINGLE RESULT
+   ================================================== */
+
+.single-result {
+    font-family: "Times New Roman", serif;
+
+    font-size: 25px;
+
+    min-width: 60px;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   BACK BUTTON
+   ================================================== */
+
+#backButton {
+    display: block;
+
+    margin: 20px auto 10px auto;
+
+    padding: 13px 30px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    background-color: #222;
+
+    color: white;
+}
+
+
+#backButton:hover {
+    background-color: #444;
+}
+
+
+/* ==================================================
+   RESULT PAGE RESPONSIVE DESIGN
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .result-page {
+        padding: 20px;
+    }
+
+
+    #operationArea {
+        justify-content: flex-start;
+
+        gap: 20px;
+
+        padding: 15px;
+    }
+
+
+    .matrix-block h2 {
+        font-size: 22px;
+    }
+
+
+    .matrix-row span {
+        min-width: 40px;
+
+        font-size: 20px;
+    }
+
+
+    .matrix-row {
+        height: 36px;
+    }
+
+
+    .operator {
+        width: 30px;
+
+        min-width: 30px;
+
+        flex-basis: 30px;
+
+        font-size: 32px;
+    }
+
+
+    .matrix-bracket {
+        width: 16px;
+    }
+
+
+    .left-bracket,
+    .right-bracket {
+        border-width: 3px;
+    }
+
+
+    .left-bracket::before,
+    .left-bracket::after,
+    .right-bracket::before,
+    .right-bracket::after {
+        width: 12px;
+
+        height: 3px;
+    }
+}
+
+
+/* ==================================================
+   SMALL SCREENS
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+
+    .container {
+        padding: 20px;
+    }
+
+
+    .result-page {
+        padding: 15px;
+    }
+
+
+    #operationTitle {
+        font-size: 24px;
+
+        margin-bottom: 40px;
+    }
+
+
+    #operationArea {
+        justify-content: flex-start;
+
+        gap: 15px;
+
+        padding: 15px 5px;
+    }
+
+
+    .matrix-block h2 {
+        font-size: 20px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .matrix-row span {
+        min-width: 38px;
+
+        font-size: 19px;
+
+        padding: 0 3px;
+    }
+
+
+    .matrix-row {
+        height: 34px;
+    }
+
+
+    .operator {
+        width: 25px;
+
+        min-width: 25px;
+
+        flex-basis: 25px;
+
+        font-size: 28px;
+    }
+
+
+    .matrix-bracket {
+        width: 14px;
+    }
+
+
+    .left-bracket,
+    .right-bracket {
+        border-width: 3px;
+    }
+
+
+    .left-bracket::before,
+    .left-bracket::after,
+    .right-bracket::before,
+    .right-bracket::after {
+        width: 10px;
+
+        height: 3px;
+    }
+}

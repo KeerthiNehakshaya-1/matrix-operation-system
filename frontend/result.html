@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Matrix Operation Result</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container result-page">
+
+        <h1>Matrix Operation Result</h1>
+
+        <h2 id="operationTitle"></h2>
+
+
+        <!-- Operation Area -->
+
+        <div id="operationArea">
+
+            <!-- Matrix A -->
+
+            <div class="matrix-block">
+
+                <h2>A</h2>
+
+                <div id="matrixADisplay"></div>
+
+            </div>
+
+
+            <!-- Operator -->
+
+            <div class="operator"
+                 id="operatorSymbol"></div>
+
+
+            <!-- Matrix B -->
+
+            <div class="matrix-block"
+                 id="matrixBBlock">
+
+                <h2>B</h2>
+
+                <div id="matrixBDisplay"></div>
+
+            </div>
+
+
+            <!-- Equals -->
+
+            <div class="operator"
+                 id="equalsSymbol"></div>
+
+
+            <!-- Result -->
+
+            <div class="matrix-block">
+
+                <h2 id="resultTitle"></h2>
+
+                <div id="resultDisplay"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Back Button -->
+
+        <button id="backButton"
+                onclick="goBack()">
+
+            BACK TO MAIN PAGE
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        // ==================================================
+        // GET SAVED RESULT
+        // ==================================================
+
+        const resultData =
+            sessionStorage.getItem("matrixResult");
+
+
+        if (!resultData) {
+
+            document.getElementById(
+                "operationTitle"
+            ).textContent =
+                "No result data found.";
+
+        }
+        else {
+
+            const data =
+                JSON.parse(resultData);
+
+            const operation =
+                data.operation;
+
+
+            // ==================================================
+            // OPERATION NAME
+            // ==================================================
+
+            const operationTitle =
+                operation.charAt(0).toUpperCase() +
+                operation.slice(1);
+
+            document.getElementById(
+                "operationTitle"
+            ).textContent =
+                operationTitle;
+
+
+            // ==================================================
+            // DISPLAY MATRIX A
+            // ==================================================
+
+            displayMatrix(
+                data.matrixA,
+                "matrixADisplay"
+            );
+
+
+            // ==================================================
+            // ADDITION / SUBTRACTION / MULTIPLICATION
+            // ==================================================
+
+            if (
+                operation === "addition" ||
+                operation === "subtraction" ||
+                operation === "multiplication"
+            ) {
+
+                let operator;
+
+                if (operation === "addition") {
+                    operator = "+";
+                }
+                else if (operation === "subtraction") {
+                    operator = "−";
+                }
+                else {
+                    operator = "×";
+                }
+
+
+                document.getElementById(
+                    "operatorSymbol"
+                ).textContent =
+                    operator;
+
+
+                document.getElementById(
+                    "equalsSymbol"
+                ).textContent =
+                    "=";
+
+
+                displayMatrix(
+                    data.matrixB,
+                    "matrixBDisplay"
+                );
+
+
+                document.getElementById(
+                    "resultTitle"
+                ).textContent =
+                    "A " +
+                    operator +
+                    " B";
+            }
+
+
+            // ==================================================
+            // TRANSPOSE / DETERMINANT / INVERSE
+            // ==================================================
+
+            else {
+
+                document.getElementById(
+                    "matrixBBlock"
+                ).style.display =
+                    "none";
+
+
+                document.getElementById(
+                    "equalsSymbol"
+                ).textContent =
+                    "=";
+
+
+                if (operation === "transpose") {
+
+                    document.getElementById(
+                        "resultTitle"
+                    ).textContent =
+                        "Aᵀ";
+
+                }
+                else if (operation === "determinant") {
+
+                    document.getElementById(
+                        "resultTitle"
+                    ).textContent =
+                        "|A|";
+
+                }
+                else if (operation === "inverse") {
+
+                    document.getElementById(
+                        "resultTitle"
+                    ).textContent =
+                        "A⁻¹";
+                }
+            }
+
+
+            // ==================================================
+            // DISPLAY RESULT
+            // ==================================================
+
+            displayMatrix(
+                data.result,
+                "resultDisplay"
+            );
+        }
+
+
+        // ==================================================
+        // DISPLAY MATRIX
+        // ==================================================
+
+        function displayMatrix(matrix, elementId) {
+
+            const container =
+                document.getElementById(elementId);
+
+            container.innerHTML = "";
+
+
+            // Determinant result
+
+            if (!Array.isArray(matrix)) {
+
+                const number =
+                    document.createElement("div");
+
+                number.className =
+                    "single-result";
+
+                number.textContent =
+                    matrix;
+
+                container.appendChild(number);
+
+                return;
+            }
+
+
+            // Matrix container
+
+            const matrixContainer =
+                document.createElement("div");
+
+            matrixContainer.className =
+                "math-matrix";
+
+
+            // Left bracket
+
+            const leftBracket =
+                document.createElement("div");
+
+            leftBracket.className =
+                "matrix-bracket left-bracket";
+
+            leftBracket.textContent = "";
+
+
+            // Matrix values
+
+            const values =
+                document.createElement("div");
+
+            values.className =
+                "matrix-values";
+
+
+            for (let i = 0; i < matrix.length; i++) {
+
+                const row =
+                    document.createElement("div");
+
+                row.className =
+                    "matrix-row";
+
+
+                for (
+                    let j = 0;
+                    j < matrix[i].length;
+                    j++
+                ) {
+
+                    const value =
+                        document.createElement("span");
+
+                    value.textContent =
+                        matrix[i][j];
+
+                    row.appendChild(value);
+                }
+
+
+                values.appendChild(row);
+            }
+
+
+            // Right bracket
+
+            const rightBracket =
+                document.createElement("div");
+
+            rightBracket.className =
+                "matrix-bracket right-bracket";
+
+            rightBracket.textContent = "";
+
+
+            // Build matrix
+
+            matrixContainer.appendChild(
+                leftBracket
+            );
+
+            matrixContainer.appendChild(
+                values
+            );
+
+            matrixContainer.appendChild(
+                rightBracket
+            );
+
+
+            container.appendChild(
+                matrixContainer
+            );
+        }
+
+
+        // ==================================================
+        // BACK TO MAIN PAGE
+        // ==================================================
+
+        function goBack() {
+
+            window.location.href =
+                "index.html";
+        }
+
+    </script>
+
+</body>
+
+</html>

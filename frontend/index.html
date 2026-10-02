@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Matrix Operations System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Matrix Operations System</h1>
+
+
+        <!-- Operation Selection -->
+
+        <div class="operation-section">
+
+            <label for="operation">Operation:</label>
+
+            <select id="operation">
+                <option value="addition">Addition</option>
+                <option value="subtraction">Subtraction</option>
+                <option value="multiplication">Multiplication</option>
+                <option value="transpose">Transpose</option>
+                <option value="determinant">Determinant</option>
+                <option value="inverse">Inverse</option>
+            </select>
+
+        </div>
+
+
+        <!-- Matrix A -->
+
+        <div class="matrix-section">
+
+            <h2>Matrix A</h2>
+
+            <div class="dimensions">
+
+                <label for="rowsA">Rows:</label>
+                <select id="rowsA"></select>
+
+                <label for="colsA">Columns:</label>
+                <select id="colsA"></select>
+
+            </div>
+
+            <div id="matrixAGrid" class="matrix-grid"></div>
+
+            <button id="clearAButton"
+                    onclick="clearMatrixA()">
+                CLEAR MATRIX A
+            </button>
+
+        </div>
+
+
+        <!-- Matrix B -->
+
+        <div id="matrixBContainer"
+             class="matrix-section">
+
+            <h2>Matrix B</h2>
+
+            <div class="dimensions">
+
+                <label for="rowsB">Rows:</label>
+                <select id="rowsB"></select>
+
+                <label for="colsB">Columns:</label>
+                <select id="colsB"></select>
+
+            </div>
+
+            <div id="matrixBGrid" class="matrix-grid"></div>
+
+            <button id="clearBButton"
+                    onclick="clearMatrixB()">
+                CLEAR MATRIX B
+            </button>
+
+        </div>
+
+
+        <!-- Calculate -->
+
+        <button id="calculateButton"
+                onclick="calculate()">
+            CALCULATE
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
