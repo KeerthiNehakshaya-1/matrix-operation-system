@@ -84,7 +84,7 @@ Calculates the inverse of a non-singular square matrix.
 
 ## 🏗️ System Architecture
 
-```text
+
                          USER
                            │
                            ▼
@@ -117,6 +117,7 @@ Calculates the inverse of a non-singular square matrix.
                            │
                            ▼
                      Result Page
+
 
 ## 📂 Project Structure
 
