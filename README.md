@@ -122,13 +122,7 @@ Calculates the inverse of a non-singular square matrix.
 ## 📂 Project Structure
 
 
-**Important:** In your actual `README.md`, the outer code fence is the ` ```text ` and closing ` ``` `. Don't put another Markdown code block around the entire section.
-
----
-
-## 2. Project Structure
-
-
+```text
 Matrix Operation System/
 │
 ├── frontend/
