@@ -297,19 +297,22 @@ Validation includes:
 
 Invalid operations are handled by returning an appropriate error message instead of producing an incorrect result.
 
+
 ## 🧪 Testing
 
-All six supported operations have been tested on the deployed application:
+All six supported operations were tested on the deployed application.
 
-Operation	       Status
-Addition	       ✅ Passed
-Subtraction	       ✅ Passed
-Multiplication	   ✅ Passed
-Transpose	       ✅ Passed
-Determinant	       ✅ Passed
-Inverse	           ✅ Passed
+| Operation | Status |
+|-----------|--------|
+| Addition | ✅ Passed |
+| Subtraction | ✅ Passed |
+| Multiplication | ✅ Passed |
+| Transpose | ✅ Passed |
+| Determinant | ✅ Passed |
+| Inverse | ✅ Passed |
 
 The application was tested both locally and through the publicly deployed version.
+
 
 ## 🎯 Project Objective
 
@@ -317,27 +320,27 @@ The objective of this project is to develop an interactive web-based matrix calc
 
 The project combines:
 
-Object-oriented programming in C++
-Matrix data structures
-Mathematical algorithms
-HTML and CSS frontend development
-JavaScript programming
-Client-server communication
-JSON-based data exchange
-HTTP-based API communication
-Docker containerization
-Cloud deployment
-📚 Key Concepts Demonstrated
-Classes and objects
-Encapsulation
-Two-dimensional arrays
-Matrix algorithms
-Dynamic HTML elements
-JavaScript event handling
-Fetch API
-JSON data exchange
-HTTP requests
-C++ web server development
-REST-style API design
-Docker containerization
-Cloud deployment
+- Object-oriented programming in C++
+- Matrix data structures
+- Mathematical algorithms
+- HTML and CSS frontend development
+- JavaScript programming
+- Client-server communication
+- JSON-based data exchange
+- HTTP-based API communication
+- Docker containerization
+- Cloud deployment
+- 📚 Key Concepts Demonstrated
+- Classes and objects
+- Encapsulation
+- Two-dimensional arrays
+- Matrix algorithms
+- Dynamic HTML elements
+- JavaScript event handling
+- Fetch API
+- JSON data exchange
+- HTTP requests
+- C++ web server development
+- REST-style API design
+- Docker containerization
+- Cloud deployment
