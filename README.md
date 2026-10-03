@@ -121,15 +121,23 @@ Calculates the inverse of a non-singular square matrix.
 
 ## 📂 Project Structure
 
-Matrix Operation System
+
+**Important:** In your actual `README.md`, the outer code fence is the ` ```text ` and closing ` ``` `. Don't put another Markdown code block around the entire section.
+
+---
+
+## 2. Project Structure
+
+
+Matrix Operation System/
 │
-├── frontend
+├── frontend/
 │   ├── index.html
 │   ├── style.css
 │   ├── script.js
 │   └── result.html
 │
-├── backend
+├── backend/
 │   ├── matrix.h
 │   ├── server.cpp
 │   ├── httplib.h
@@ -137,6 +145,7 @@ Matrix Operation System
 │
 ├── Dockerfile
 └── README.md
+
 
 ## ⚙️ How It Works
 
