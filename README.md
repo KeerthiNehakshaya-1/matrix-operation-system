@@ -84,36 +84,39 @@ Calculates the inverse of a non-singular square matrix.
 
 ## 🏗️ System Architecture
 
-
-                 USER
-                   │
-                   ▼
-            Web Browser
-                   │
-                   ▼
-        HTML + CSS + JavaScript
-                   │
-              HTTP / JSON
-                   │
-                   ▼
-           C++ Web Server
-                   │
-                   ▼
-             Matrix Class
-                   │
-       ┌───────────┼───────────┐
-       ▼           ▼           ▼
-   Addition    Subtraction   Multiplication
-       │
-       ├── Transpose
-       ├── Determinant
-       └── Inverse
-                   │
-                   ▼
-             JSON Response
-                   │
-                   ▼
-              Result Page
+```text
+                         USER
+                           │
+                           ▼
+                    Web Browser
+                           │
+                           ▼
+              HTML + CSS + JavaScript
+                           │
+                       HTTP / JSON
+                           │
+                           ▼
+                    C++ Web Server
+                           │
+                           ▼
+                     Matrix Class
+                           │
+          ┌────────────────┼────────────────┐
+          │                │                │
+          ▼                ▼                ▼
+      Addition        Subtraction     Multiplication
+          │
+          ├──────────► Transpose
+          │
+          ├──────────► Determinant
+          │
+          └──────────► Inverse
+                           │
+                           ▼
+                    JSON Response
+                           │
+                           ▼
+                     Result Page
 
 ## 📂 Project Structure
 
