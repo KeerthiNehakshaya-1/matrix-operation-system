@@ -144,19 +144,19 @@ Matrix Operation System/
 
 ## ⚙️ How It Works
 
-1.The user selects the required matrix dimensions.
-2.The frontend dynamically creates the matrix input fields.
-3.The user enters the matrix values.
-4.The user selects the required matrix operation.
-5.JavaScript collects the matrix values from the input fields.
-6.The matrix data and selected operation are converted into JSON.
-7.The JSON request is sent to the C++ backend.
-8.The C++ server receives and processes the request.
-9.The Matrix class performs the selected operation.
-10.The calculated result is converted into JSON.
-11.JavaScript receives and stores the result.
-12.The result page is opened.
-13.The result is displayed in mathematical matrix format.
+- The user selects the required matrix dimensions.
+- The frontend dynamically creates the matrix input fields.
+- The user enters the matrix values.
+- The user selects the required matrix operation.
+- JavaScript collects the matrix values from the input fields.
+- The matrix data and selected operation are converted into JSON.
+- The JSON request is sent to the C++ backend.
+- The C++ server receives and processes the request.
+- The Matrix class performs the selected operation.
+- The calculated result is converted into JSON.
+- JavaScript receives and stores the result.
+- The result page is opened.
+- The result is displayed in mathematical matrix format.
 
 ## 🔄 Data Flow
 
