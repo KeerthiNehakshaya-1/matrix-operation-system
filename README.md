@@ -160,28 +160,46 @@ Matrix Operation System/
 
 ## 🔄 Data Flow
 
-Matrix Input
-     │
-     ▼
-JavaScript
-     │
-     ▼
-JSON Request
-     │
-     ▼
-C++ Backend
-     │
-     ▼
-Matrix Operations
-     │
-     ▼
-JSON Response
-     │
-     ▼
-JavaScript
-     │
-     ▼
-Result Page
+```text
+┌──────────────┐
+│ Matrix Input │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│  JavaScript  │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ JSON Request │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ C++ Backend  │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────┐
+│ Matrix Operations│
+└──────┬───────────┘
+       │
+       ▼
+┌───────────────┐
+│ JSON Response │
+└──────┬────────┘
+       │
+       ▼
+┌──────────────┐
+│  JavaScript  │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ Result Page  │
+└──────────────┘
+```
 
 
 ## 💻 Running Locally
